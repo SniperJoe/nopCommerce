@@ -375,9 +375,9 @@ namespace Nop.Web.Areas.Admin.Factories
         /// <returns>List of models</returns>
         public virtual IList<AdminNavigationPluginModel> PrepareAdminNavigationPluginModels()
         {
-            var cacheKey = string.Format(NopPluginDefaults.AdminNavigationPluginsCacheKey, _workContext.CurrentCustomer.Id);
-            return _cacheManager.Get(cacheKey, () =>
-            {
+           // var cacheKey = string.Format(NopPluginDefaults.AdminNavigationPluginsCacheKey, _workContext.CurrentCustomer.Id);
+            //return _cacheManager.Get(cacheKey, () =>
+           // {
                 //get installed plugins
                 return _pluginService.GetPluginDescriptors<IPlugin>(LoadPluginsMode.InstalledOnly, _workContext.CurrentCustomer)
                     .Where(plugin => plugin.ShowInPluginsList)
@@ -386,7 +386,7 @@ namespace Nop.Web.Areas.Admin.Factories
                         FriendlyName = plugin.FriendlyName,
                         ConfigurationUrl = plugin.Instance<IPlugin>().GetConfigurationPageUrl()
                     }).Where(model => !string.IsNullOrEmpty(model.ConfigurationUrl)).ToList();
-            });
+            //});
         }
 
         #endregion

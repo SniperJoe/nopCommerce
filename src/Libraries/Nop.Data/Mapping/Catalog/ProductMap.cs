@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Nop.Core.Domain.Catalog;
 
@@ -21,6 +21,7 @@ namespace Nop.Data.Mapping.Catalog
             builder.HasKey(product => product.Id);
 
             builder.Property(product => product.Name).HasMaxLength(400).IsRequired();
+            builder.Property(product => product.Author).HasMaxLength(50).HasDefaultValue("John Doe");
             builder.Property(product => product.MetaKeywords).HasMaxLength(400);
             builder.Property(product => product.MetaTitle).HasMaxLength(400);
             builder.Property(product => product.Sku).HasMaxLength(400);

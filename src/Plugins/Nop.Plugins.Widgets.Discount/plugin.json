@@ -1,0 +1,13 @@
+{
+  
+    "Group": "Widgets",
+    "FriendlyName": "Discount",
+    "SystemName": "Widgets.Discount",
+    "Version": "1.00",
+    "SupportedVersions": [ "4.20" ],
+    "Author": "Nikita Morozov",
+    "DisplayOrder": 1,
+    "FileName": "Nop.Plugin.Widgets.Discount.dll",
+    "Description": "This plugin displays discount info on a product's page"
+  
+}

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Nop.Core.Domain.Discounts;
@@ -47,6 +47,11 @@ namespace Nop.Core.Domain.Catalog
         /// Gets or sets the name
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets a book's author
+        /// </summary>
+        public string Author { get; set; }
 
         /// <summary>
         /// Gets or sets the short description

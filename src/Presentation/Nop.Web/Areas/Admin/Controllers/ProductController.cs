@@ -817,6 +817,7 @@ namespace Nop.Web.Areas.Admin.Controllers
                 var product = model.ToEntity<Product>();
                 product.CreatedOnUtc = DateTime.UtcNow;
                 product.UpdatedOnUtc = DateTime.UtcNow;
+                product.Author = model.Author; //i dont know where mapping is, so leave it in such way for now
                 _productService.InsertProduct(product);
 
                 //search engine name
@@ -936,6 +937,7 @@ namespace Nop.Web.Areas.Admin.Controllers
                 product = model.ToEntity(product);
 
                 product.UpdatedOnUtc = DateTime.UtcNow;
+                product.Author = model.Author;
                 _productService.UpdateProduct(product);
 
                 //search engine name
